@@ -1,8 +1,12 @@
+import Heading from "../components/Heading";
+
 export default function HomePage() {
   return (
     <>
-      <h1>Joystick Critic</h1>
-      <p>Only the best Nintendo games, reviewed for you.</p>
+      <Heading children={"Riley's Nintendo Game Reviews"} />
+      <p className="text-font-color">
+        Only the best Nintendo games, reviewed for you.
+      </p>
     </>
   );
 }
