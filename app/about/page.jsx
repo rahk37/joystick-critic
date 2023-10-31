@@ -1,9 +1,9 @@
+import Heading from "@/components/Heading";
+
 export default function AboutPage() {
   return (
     <>
-      <h1 className="font-bold text-2xl pb-3 text-font-color-dark">
-        About Joystick Critic
-      </h1>
+      <Heading>About Joystick Critic</Heading>
       <p className="text-font-color">
         We review Nintendo games just for you.
       </p>

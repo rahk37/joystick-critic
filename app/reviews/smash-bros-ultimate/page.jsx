@@ -1,12 +1,34 @@
-export default function SmashBrosUltimatePage() {
+import { readFile } from "node:fs/promises";
+import { marked } from "marked";
+import matter from "gray-matter";
+import Heading from "@/components/Heading";
+
+export default async function SmashBrosUltimatePage() {
+  const text = await readFile(
+    "./content/reviews/smash-bros-ultimate.md",
+    "utf8"
+  );
+
+  const {
+    content,
+    data: { title, date, image },
+  } = matter(text);
+
+  const html = marked(text, { headerIds: false, mangle: false });
+
   return (
     <>
-      <h1 className="font-bold text-2xl pb-3 text-font-color-dark">
-        Super Smash Bros. Ultimate
-      </h1>
-      <p className="text-font-color">
-        This will be a review of the game.
-      </p>
+      <Heading>{title}</Heading>
+      <p className="pb-2 italic">{date}</p>
+      <img
+        src={image}
+        className="mb-3 rounded max-w-screen-sm"
+        alt="Super Smash Bros. Ultimate for the Nintendo Switch"
+      />
+      <article
+        className="max-w-screen-sm prose prose-text-font-color"
+        dangerouslySetInnerHTML={{ __html: html }}
+      />
     </>
   );
 }

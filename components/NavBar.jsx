@@ -6,17 +6,17 @@ export default function NavBar() {
       <nav>
         <ul className="flex gap-2">
           <li>
-            <Link href="/" className="text-nintendo-red hover:underline">
-              Home
+            <Link href="/" className="text-nintendo-red font-orbitron font-bold hover:underline hover:transition-all">
+              Riley's Reviews
             </Link>
           </li>
-          <li>
-            <Link href="/reviews" className="text-nintendo-red hover:underline">
+          <li className="ml-auto">
+            <Link href="/reviews" className="text-nintendo-red font-semibold hover:underline hover:transition-all">
               Reviews
             </Link>
           </li>
           <li>
-            <Link href="/about" className="text-nintendo-red hover:underline">
+            <Link href="/about" className="text-nintendo-red font-semibold hover:underline hover:transition-all">
               About
             </Link>
           </li>

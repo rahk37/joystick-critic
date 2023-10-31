@@ -16,6 +16,12 @@ module.exports = {
       "font-color-light": "#595b61",
       "font-color-dark": "#26282e",
     },
+    extend: {
+      fontFamily: {
+        sans: ["var(--font-sora)", "sans-serif"],
+        orbitron: ["var(--font-orbitron)", "sans-serif"],
+      },
+    },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
